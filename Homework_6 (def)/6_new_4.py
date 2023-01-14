@@ -14,4 +14,5 @@ products = [
     {'id': 612345, 'title': 'Кофемашина', 'price': 1000, 'discount': 6},
     ]
 def check(list1: list[tuple]):
-    print()
+
+    return f'''Товар {'title'}: количество: {}шт, общая стоимость {'price'*}'''
