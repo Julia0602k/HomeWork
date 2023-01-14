@@ -17,9 +17,9 @@ class Rectangle():
     def square(self):
         square_rectangle = abs(self.x2 - self.x1)*abs(self.y2 - self.y1)
         return square_rectangle
-    def print(self):
-        print(f'Периметр прямоугольника равен {self.perimeter()} см, площадь прямоугольника равен {self.square()} см2')
+    def __str__ (self):
+        return f'Периметр прямоугольника равен {self.perimeter()} см, площадь прямоугольника равен {self.square()} см2'
 ex_1 = Rectangle(1, 1, 3, 5)
 ex_2 = Rectangle(1, -1, -3, 8)
-ex_1.print()
-ex_2.print()
+print(ex_1)
+print(ex_2)
