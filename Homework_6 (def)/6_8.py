@@ -7,3 +7,4 @@ def what_country(city, dict_city):
         if city in v:
             print(f'{city} is located in {k}')
 what_country(city, dict_city)
+
