@@ -23,4 +23,3 @@ ex_1 = Rectangle(1, 1, 3, 5)
 ex_2 = Rectangle(1, -1, -3, 8)
 ex_1.print()
 ex_2.print()
-
