@@ -21,7 +21,7 @@ def check(list_buy: list[tuple[int, int]], products: list[dict]):
     for i in list_buy:
         for j in products:
             if i[0] in j.values():
-                str1 += j.get('title') + ' - ' + str(i[1]) + ' шт.,'
+                str1 += j.get('title') + ' - ' + str(i[1]) + ' шт., '
                 sum_all += j.get('price') * i[1]
                 sum_all_discount += j.get('price') * i[1] * (100 - j.get('discount'))/100
     return f'''Куплены товары: {str1}
