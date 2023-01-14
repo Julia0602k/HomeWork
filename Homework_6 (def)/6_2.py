@@ -45,7 +45,9 @@ def text_to_morse(text1):
     text1 = text1.lower()
     result1 = ''
     for i in text1:
-        result1 += dict_morse[i] + ' '
+        result1 += dict_morse.get(i, '')
+        if i in dict_morse:
+            result1 += ' '
     print(result1)
 
 text_to_morse(text1)
