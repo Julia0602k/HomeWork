@@ -8,8 +8,7 @@ data1 = {111: {'name': 'Vasya', 'surname': 'Ivanov', 'phone_number': '+375295556
          }
 def no_email(data1):
     print("There are users, who don't have email:")
-    for key, value in data1.items():
-        for k, v in value.items():
-            if k == 'email' and v == '':
-                print(value['name'])
+    for value in data1.values():
+        if not value.get('email', ''):
+            print(value.get('name'))
 no_email(data1)
