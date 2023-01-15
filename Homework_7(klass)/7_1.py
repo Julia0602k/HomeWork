@@ -11,8 +11,9 @@ class Student():
         self.marks = marks
     def __str__(self):
         return f'Cтудент {self.first_name} из группы N {self.group} имеет отметки {self.marks}'
-# def student_sort(students: list[Student]):
-#     return students.sort()
+def student_sort(students: list[Student]):
+    return students.sort()
+
 students = [Student('Василий', 231, [5, 8, 7]), Student('Мария', 156, [1, 8, 3, 7]), Student('Евгений', 568, [9, 8, 9, 9, 9])]
 vasya = Student('Василий', 231, [5, 8, 7])
 print(vasya)
