@@ -21,9 +21,9 @@ st_1 = Student('Василий', 231, [5, 8, 7])
 st_2 = Student('Мария', 156, [1, 8, 3, 7])
 st_3 = Student('Евгений', 568, [9, 8, 9, 9, 9])
 students = [st_1, st_2, st_3]
-print(st_1)
-print(st_2)
-print(st_3)
+# print(st_1)
+# print(st_2)
+# print(st_3)
 student_sort(students)
 for st in students:
-    print(st.first_name, ' ', end='')
+    print(str(st))
