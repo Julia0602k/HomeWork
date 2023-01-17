@@ -22,7 +22,7 @@ class Car:
             self.is_busy = True
         else:
             self.is_busy = False
-class Taxi():
+class Taxi:
     def __init__(self, cars: list):
         self.cars = cars
     def find_car(self, count_passengers, is_baby):
