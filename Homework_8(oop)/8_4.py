@@ -36,3 +36,6 @@ class Category:
         if category in cls.categories:
             cls.categories[category] = False
         raise IndexError
+
+print(Category.add(category='TV'))
+print(Category)
