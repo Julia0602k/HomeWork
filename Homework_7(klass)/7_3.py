@@ -18,10 +18,8 @@ class Numbers:
         return sum(numbers) / len(numbers)
 
     def __str__(self):
-        return f'''Среднее арифметическое среди всех чисел: {self.average()}, наиболее часто встречающиеся числа: {self.max_count()}'''
-
+        return f'''Среднее арифметическое среди всех чисел: {self.average()}, 
+наиболее часто встречающeeся число или среднее арифметическое между наиболее часто встречающимися числами: {self.max_count()}'''
 
 list1 = Numbers([1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3, 3, 1, 1, 1])
-print(list1.average())
-print(list1.max_count())
 print(list1)
