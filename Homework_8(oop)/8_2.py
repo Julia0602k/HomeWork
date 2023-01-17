@@ -25,15 +25,15 @@ class Car:
 class Taxi():
     def __init__(self, cars: list):
         self.cars = cars
-def find_car(cars, count_passengers, is_baby):
-    for c in cars:
-        if count_passengers <= self.count_passenger_seats and self.is_busy == False:
-            if is_baby and self.is_baby_seat or not is_baby:
-                self.make_busy()
-                print(111)
-    else:
-        return None
-
+    def find_car(self, count_passengers, is_baby):
+        for car in self.cars:
+            if count_passengers <= car.count_passenger_seats and car.is_busy is False:
+                if is_baby and car.is_baby_seat or not is_baby:
+                    car.make_busy()
+                    print(car)
+                    break
+        else:
+            return None
 
 car1 = Car('красный', 3, True)
 car2 = Car('желтый', 2, False)
@@ -44,5 +44,4 @@ cars = Taxi([car1, car2, car3, car4, car5])
 
 count_passengers = int(input('Введите требуемое количество мест: '))
 is_baby = input('Если требуется детское автокресло, введите цифру 1; есть нет, введите 0. Сделайте выбор: ')
-find_car
-
+cars.find_car(count_passengers, is_baby)
