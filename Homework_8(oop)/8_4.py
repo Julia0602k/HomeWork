@@ -7,35 +7,46 @@
 # значение ключа is_published на False, если такого индекса нет, вызвать исключение
 # IndexError
 class Category:
-    categories = {}
+    categories: list[dict[str:str, str: bool]]
+    categories = []
     @classmethod
     def add(cls, category: str):
-        return cls.categories.setdefault(category, False)
+        for i in cls.categories:
+            if category in i.values:
+                raise ValueError
+        else:
+            return cls.categories.append({'name': category, 'is_published': False})
 
     @classmethod
-    def get(cls, category: str):
-        return cls.categories.get(category)
-
-    @classmethod
-    def delete(cls, category: str) -> None:
-        if category in cls.categories:
-            del cls.categories[category]
-
-    @classmethod
-    def update(cls, category):
-        return cls.categories.setdefault(category, False)
-
-    @classmethod
-    def make_published(cls, category):
-        if category in cls.categories:
-            cls.categories[category] = True
+    def get(cls, index: int):
+        if index in range(len(cls.categories)):
+            return cls.categories[index]['name']
         raise IndexError
 
     @classmethod
-    def make_unpublished(cls, category):
-        if category in cls.categories:
-            cls.categories[category] = False
+    def delete(cls, index: int) -> None:
+        if index in range(len(cls.categories)):
+            del cls.categories[index]
+
+    @classmethod
+    def update(cls, index, category):
+        if index not in range(len(cls.categories)):
+            for i in cls.categories:
+                if category in i.values:
+                    raise ValueError
+            else:
+                return cls.categories.append({'name': category, 'is_published': False})
+
+    @classmethod
+    def make_published(cls, index: int):
+        if index in range(len(cls.categories)):
+            cls.categories[index]['is_published'] = True
         raise IndexError
 
-print(Category.add(category='TV'))
-print(Category)
+    @classmethod
+    def make_unpublished(cls,  index: int):
+        if index in range(len(cls.categories)):
+            cls.categories[index]['is_published'] = False
+        raise IndexError
+
+
