@@ -1,7 +1,5 @@
-from sqlalchemy import Column, TIMESTAMP, INTEGER, SMALLINT, INT, \
-    VARCHAR, BOOLEAN, ForeignKey, DECIMAL, create_engine
+from sqlalchemy import Column, INT, VARCHAR, ForeignKey, create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
-from datetime import datetime
 
 class Base(DeclarativeBase):
 
@@ -13,6 +11,10 @@ class Role(Base):
     __tablename__ = 'roles'
 
     name = Column(VARCHAR(15), nullable=False)
+class Category(Base):
+    __tablename__ = 'categories'
+
+    name = Column(VARCHAR(255), nullable=False)
 class User(Base):
     __tablename__ = 'users'
 
@@ -31,13 +33,10 @@ class Comment(Base):
 class Topic(Base):
     __tablename__ = 'topics'
 
-    # author_id = Column(INT, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
-    # topic_id = Column(INT, ForeignKey('topics.id', ondelete='CASCADE'), nullable=False)
-    # parent_id = Column(INT, ForeignKey('comments.id', ondelete='CASCADE'), nullable=False)
+    author_id = Column(INT, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+    category_id = Column(INT, ForeignKey('categories.id', ondelete='CASCADE'), nullable=False)
 
-class Category(Base):
-    __tablename__ = 'categories'
 
-    name = Column(VARCHAR(255), nullable=False)
+
 
 
